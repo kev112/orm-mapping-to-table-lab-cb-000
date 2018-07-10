@@ -10,7 +10,7 @@ class Student
 
   end
 
-  def save
+  def create
     DB[:conn].execute('INSERT INTO students VALUES (?, ?)', self.name, self.grade)
   end
 end
