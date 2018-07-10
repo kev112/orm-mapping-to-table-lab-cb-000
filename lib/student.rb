@@ -8,4 +8,8 @@ class Student
     @name = name
     @grade = grade
   end
+
+  def.save
+    
+  end
 end
