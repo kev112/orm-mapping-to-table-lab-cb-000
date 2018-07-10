@@ -13,18 +13,22 @@ class Student
     DB[:conn].execute('CREATE TABLE students (id INTEGER PRIMARY KEY, name STRING, grade INTEGER)')
   end
 
+  # def save
+  #   sql = <<-SQL
+  #     INSERT INTO students (name, grade)
+  #     VALUES (?, ?)
+  #   SQL
+  # 
+  #   DB[:conn].execute(sql, self.name, self.grade)
+  #   @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
+  # end
+
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
       VALUES (?, ?)
     SQL
-
     DB[:conn].execute(sql, self.name, self.grade)
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
   end
-
-  # def save
-  #   DB[:conn].execute('INSERT INTO students VALUES (?, ?)', self.name, self.grade)
-  #   @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
-  # end
 end
