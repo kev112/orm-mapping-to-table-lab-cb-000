@@ -13,7 +13,7 @@ class Student
     DB[:conn].execute('CREATE TABLE students (id INTEGER PRIMARY KEY, name STRING, grade INTEGER)')
   end
 
-  def self.create(name:, grade:)
+  def save(name:, grade:)
     DB[:conn].execute('INSERT INTO students VALUES (?, ?)', name, grade)
   end
 end
