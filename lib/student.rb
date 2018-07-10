@@ -10,7 +10,7 @@ class Student
   end
 
   def self.create_table
-    DB[:conn].execute()
+    DB[:conn].execute('CREATE TABLE students')
   end
 
   def self.create(name:, grade:)
