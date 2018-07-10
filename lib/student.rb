@@ -7,10 +7,11 @@ class Student
   def initialize(name:, grade:)
     @name = name
     @grade = grade
-    @db = DB[:conn]
+
   end
 
   def.save
-    self.name, self.grade
+    
+    DB[:conn].execute('INSERT INTO students VALUES (?, ?)', self.name, self.grade)
   end
 end
